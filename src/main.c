@@ -4,7 +4,7 @@
 
 static int callback(void *data, int argc, char **argv, char **azColName){
    int i;
-   fprintf(stderr, "%s: ", (const char*)data);
+   fprintf(stderr, "%s", (const char*)data);
    
    for(i = 0; i<argc; i++){
       printf("%s = %s\n", azColName[i], argv[i] ? argv[i] : "NULL");
@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
    char *zErrMsg = 0;
    int rc;
    char *sql;
-   const char* data = "Callback function called";
+   const char* data = "";
 
    /* Open database */
    rc = sqlite3_open("main.db", &db);
